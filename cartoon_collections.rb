@@ -1,21 +1,20 @@
-def roll_call_dwarves(names)
-  names.each_with_index do |name, index|
-    index = index + 1
-    puts "#{index}. #{name}"
+def roll_call_dwarves(dwarves)
+  dwarves.each_with_index do |dwarf, index|
+    puts "#{index + 1}. #{dwarf}"
   end
 end
 
 def summon_captain_planet(planeteer_calls)
-  planeteer_calls.collect do |element|
-    element.capitalize + "!"
+  planeteer_calls.collect do |call|
+    call.capitalize << "!"
   end
 end
 
-def long_planeteer_calls(calls)
-  calls.any? {|call| call.length>4}
+def long_planeteer_calls(planeteer_calls)
+  planeteer_calls.any? {|call| call.length > 4}
 end
 
-def find_the_cheese(list)
+def find_the_cheese(ingredients)
   cheese_types = ["cheddar", "gouda", "camembert"]
-    list.detect { |ingredient| cheese_types.include? ingredient }
+  ingredients.detect {|ingredient| cheese_types.include?(ingredient)}
 end
